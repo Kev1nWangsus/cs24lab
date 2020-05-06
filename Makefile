@@ -1,11 +1,22 @@
-hello: main.o functions.o
-	g++ main.o functions.o -o hello
+# Makefile
+CXX_FLAG = --std=c++11 -g
 
-main.o: main.cpp functions.h
-	g++ main.cpp -c
+all: testlist testrest
 
-functions.o: functions.cpp functions.h
-	g++ functions.cpp -c
+testlist: testlist.o intlist.o
+	g++ $(CXX_FLAG) -o testlist testlist.o intlist.o
+
+testrest: testrest.o intlist.o
+	g++ $(CXX_FLAG) -o testrest testrest.o intlist.o
+
+testlist.o: testlist.cpp
+	g++ -c $(CXX_FLAG) testlist.cpp
+
+testrest.o: testrest.cpp
+	g++ -c $(CXX_FLAG) testrest.cpp
+
+intlist.o: intlist.cpp
+	g++ -c $(CXX_FLAG) intlist.cpp
 
 clean:
-	rm hello *.o
+	rm -f testrest testlist *.o

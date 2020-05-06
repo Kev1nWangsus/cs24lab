@@ -1,3 +1,3 @@
 # CMPSC 24
 
-lab03
+lab02
