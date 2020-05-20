@@ -28,11 +28,12 @@ bool balanced(char *expression[], int numTokens) {
                       // Step 2 of this lab, but it won't get full
                       // and it can store any type - <char *> here
     TokenType type;
+    char *c;
     for (int i = 0; i < numTokens; i++) {
         type = identify(expression[i]);
         switch(type) {
-            case LEFT: 
-                s.push("(");
+            case LEFT:
+                s.push(c);
                 break;
             case RIGHT:
                 if (s.empty()) return false;
