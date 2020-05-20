@@ -1,5 +1,6 @@
 // evalfull.cpp - evaluates a fully-parenthesized expression
-// NAME(S), DATE
+// Shuo Wang 
+// 21 May 2020
 
 #include <cstdlib>   // for atof function
 #include <cstdio>    // for sscanf
@@ -41,7 +42,7 @@ bool balanced(char *expression[], int numTokens) {
                 break;
         }
     }
-    
+
     return s.empty(); // REPLACE THIS return WITH ACTUAL IMPLEMENTATION
 }
 
