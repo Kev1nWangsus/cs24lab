@@ -41,6 +41,7 @@ bool balanced(char *expression[], int numTokens) {
                 break;
         }
     }
+    
     return s.empty(); // REPLACE THIS return WITH ACTUAL IMPLEMENTATION
 }
 
