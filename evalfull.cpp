@@ -29,14 +29,10 @@ bool balanced(char *expression[], int numTokens) {
     TokenType type;
     for (int i = 0; i < numTokens; i++) {
         type = identify(expression[i]);
-        switch(type) {
-            case LEFT: 
-                s.push("(");
-                break;
-            case RIGHT:
-                if (s.empty()) return false;
-                else s.pop();
-                break;
+        if (type == LEFT) s.push("(");
+        else if (type == RIGHT) {
+            if (s.empty()) return false;
+            else s.pop();
         }
     }
     return s.empty(); // REPLACE THIS return WITH ACTUAL IMPLEMENTATION
