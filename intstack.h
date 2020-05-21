@@ -14,11 +14,12 @@
 class Stack {
 
 public:
-    Stack() : next(0) { }
-    void push(int n) { data[next++] = n; }
-    void pop() { --next; }
-    int top() const { return data[next-1]; }
-    bool empty() const { return next <= 0; }
+    Stack();
+    void push(int n);
+    void pop();
+    int top() const;
+    bool empty() const;
+    bool full() const;
 private:
     int next, data[CAPACITY];
 };
