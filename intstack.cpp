@@ -1,3 +1,6 @@
+// Shuo Wang
+// 21 May 2020
+
 #include "intstack.h"
 #include <iostream>
 
