@@ -1,5 +1,7 @@
 // heap.cpp
-// Diba Mirza
+// Shuo Wang
+// 9438425
+// 30 May 2020
 
 #include "heap.h"
 #include <iostream>

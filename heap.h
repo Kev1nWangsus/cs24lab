@@ -1,6 +1,8 @@
 // heap.h
 // Binary heap tree header file for CS 24 lab
-// Diba Mirza
+// Shuo Wang
+// 9438425
+// 30 May 2020
 
 #ifndef HEAP_H
 #define HEAP_H
