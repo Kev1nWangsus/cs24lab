@@ -11,11 +11,7 @@ using std::cout;
 // Pushes a value into the heap, then ensures
 // the heap is correctly arranged
 void Heap::push(int value) {
-	if (vdata.empty()) vdata.push_back(value);
-    else {
-		vdata.push_back(value);
-		if (*(vdata.end()-1) < *(vdata.end()-2)) sort(vdata.begin(), vdata.end());
-	}
+    vdata.insert(lower_bound(vdata.begin(), vdata.end(), value), value);
 }
 
 // Pops the minimum value off the heap
