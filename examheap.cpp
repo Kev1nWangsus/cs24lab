@@ -51,8 +51,8 @@ int main(int argc, char *argv[]) {
         numvals = 3;       
     }
     if (t == 3) {
-       cout << "testing with four values ... ";
-       numvals = 4;
+        cout << "testing with four values ... ";
+        numvals = 4;
     }
     if (t == 4){
         cout << "testing with large data set ... ";
@@ -63,9 +63,9 @@ int main(int argc, char *argv[]) {
         numvals = 20000;
     } 
     for (int i=0; i < numvals; i++) {
-            int arand = rand() % 2000;
-            data.push(arand);
-            h.push(arand);
+        int arand = rand() % 2000;
+        data.push(arand);
+        h.push(arand);
     }
     while(!data.empty()){
         assert(!h.empty());
