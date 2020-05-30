@@ -18,7 +18,7 @@ IntBST::~IntBST(){
 }
 
 // recursive helper for destructor
-void IntBST::clear(Node *n){
+void IntBST::clear(IntBST::Node *n){
     if (n){
         clear(n->left);
         clear(n->right);
