@@ -5,7 +5,6 @@
 
 #include "heap.h"
 #include <iostream>
-#include <algorithm>
 using std::cout;
 
 // Pushes a value into the heap, then ensures
