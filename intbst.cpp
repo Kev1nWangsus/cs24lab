@@ -9,11 +9,11 @@ using std::cout;
 
 // constructor sets up empty tree
 template <class T>
-IntBST<T>::IntBST<T>() : root(0) {}
+IntBST<T>::IntBST() : root(0) {}
 
 // destructor deletes all nodes
 template <class T>
-IntBST<T>::~IntBST<T>(){
+IntBST<T>::~IntBST(){
     clear(root);
 }
 

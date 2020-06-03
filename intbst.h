@@ -13,7 +13,6 @@ using namespace std;
 
 template <class T>
 class IntBST{
-
     public:
         // ctor, dtor, insert and one print method already done in intbst.cpp:
         IntBST();                   // constructor
