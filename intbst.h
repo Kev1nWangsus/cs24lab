@@ -8,17 +8,16 @@
 #define INTBST_H
 
 #include <iostream>
-#include "intbst.cpp"
 
 using namespace std;
 
 template <class T>
-class BST{
+class IntBST{
 
     public:
         // ctor, dtor, insert and one print method already done in intbst.cpp:
-        BST();                   // constructor
-        ~BST();                  // destructor
+        IntBST();                   // constructor
+        ~IntBST();                  // destructor
         bool insert(T value);     // insert value; return false if duplicate
         void printPreOrder() const; // prints tree data pre-order to cout
 
@@ -60,5 +59,7 @@ class BST{
         Node *getSuccessorNode(T value) const;   // returns the Node containing the successor of the given value
         Node *getPredecessorNode(T value) const; // returns the Node containing the predecessor of the given value
 };
+
+#include "intbst.cpp"
 
 #endif
