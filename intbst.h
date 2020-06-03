@@ -8,6 +8,7 @@
 #define INTBST_H
 
 #include <iostream>
+#include "intbst.cpp"
 
 using namespace std;
 
