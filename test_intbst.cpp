@@ -98,20 +98,20 @@ void testSuccessor(){
 
 void testSum_1(){
 	string testname = "testSum_Case_1: Empty tree";
-	IntBST bst;
+	BST<int> bst;
 	AssertEqual(0, bst.sum(), testname);
 }
 
 void testSum_2(){
 	string testname = "testSum_Case_2: Root tree";
-	IntBST bst;
+	BST<int> bst;
 	bst.insert(16);
 	AssertEqual(16, bst.sum(), testname);
 }
 
 void testSum_3(){
 	string testname = "testSum_Case_3: Normal tree";
-	IntBST bst;
+	BST<int> bst;
 	bst.insert(16);
 	bst.insert(24);
 	bst.insert(64);
@@ -122,20 +122,20 @@ void testSum_3(){
 
 void testCount_1(){
 	string testname = "testCount_Case_1: Empty tree";
-	IntBST bst;
+	BST<int> bst;
 	AssertEqual(0, bst.count(), testname);
 }
 
 void testCount_2(){
 	string testname = "testCount_Case_2: Root tree";
-	IntBST bst;
+	BST<int> bst;
 	bst.insert(16);
 	AssertEqual(1, bst.count(), testname);
 }
 
 void testCount_3(){
 	string testname = "testCount_Case_3: Normal tree";
-	IntBST bst;
+	BST<int> bst;
 	bst.insert(16);
 	bst.insert(24);
 	bst.insert(64);
@@ -146,20 +146,20 @@ void testCount_3(){
 
 void testContain_1(){
 	string testname = "testContain_Case_1: Empty tree";
-	IntBST bst;
+	BST<int> bst;
 	AssertEqual(false, bst.contains(0), testname);
 }
 
 void testContain_2(){
 	string testname = "testContain_Case_2: Root tree";
-	IntBST bst;
+	BST<int> bst;
 	bst.insert(16);
 	AssertEqual(true, bst.contains(16), testname);
 }
 void testContain_3(){
 	string testname_1 = "testContain_Case_3_1: Normal tree (contains)";
     string testname_2 = "testContain_Case_3_2: Normal tree (not contains)";
-	IntBST bst;
+	BST<int> bst;
 	bst.insert(16);
 	bst.insert(24);
 	bst.insert(64);
@@ -171,14 +171,14 @@ void testContain_3(){
 
 void testRemove_1(){
 	string testname = "testRemove_Case_1: Empty tree";
-	IntBST bst;
+	BST<int> bst;
 	AssertEqual(false, bst.remove(2), testname);
 }
 
 void testRemove_2(){
 	string testname_1 = "testRemove_Case_2_1: Root tree (remove element)";
     string testname_2 = "testRemove_Case_2_2: Root tree (not contains after remove)";
-	IntBST bst;
+	BST<int> bst;
 	bst.insert(16);
     AssertEqual(true, bst.remove(16), testname_1);
 	AssertEqual(false, bst.contains(16), testname_2);
@@ -188,7 +188,7 @@ void testRemove_3(){
 	string testname_1 = "testRemove_Case_3_1: Normal tree (remove element)";
     string testname_2 = "testRemove_Case_3_2: Normal tree (remove non-element)";
     string testname_3 = "testRemove_Case_3_3: Normal tree (not contains after remove)";
-	IntBST bst;
+	BST<int> bst;
 	bst.insert(16);
 	bst.insert(24);
 	bst.insert(64);
@@ -201,14 +201,14 @@ void testRemove_3(){
 
 void testPredecessor_1(){
     string testname = "testPredecessor_Case_1: Root tree";
-    IntBST bst;
+    BST<int> bst;
     bst.insert(16);
     AssertEqual(0, bst.getPredecessor(16), testname);
 }
 
 void testPredecessor_2(){
     string testname = "testPredecessor_Case_2: Normal tree";
-    IntBST bst;
+    BST<int> bst;
     bst.insert(16);
 	bst.insert(24);
 	bst.insert(64);
@@ -219,14 +219,14 @@ void testPredecessor_2(){
 
 void testSuccessor_1(){
     string testname = "testSuccessor_Case_1: Root tree";
-    IntBST bst;
+    BST<int> bst;
     bst.insert(16);
     AssertEqual(0, bst.getSuccessor(16), testname);
 }
 
 void testSuccessor_2(){
     string testname = "testSuccessor_Case_2: Normal tree";
-    IntBST bst;
+    BST<int> bst;
     bst.insert(16);
 	bst.insert(24);
 	bst.insert(64);

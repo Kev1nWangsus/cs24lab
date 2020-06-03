@@ -1,24 +1,26 @@
 // intbst.cpp
-// Implements class IntBST
+// Implements class BST
 // Shuo Wang 
 // 9438425
-// 2 May 2020
+// 2 Jun 2020
 
 #include "intbst.h"
-
 #include <iostream>
 using std::cout;
 
 // constructor sets up empty tree
-IntBST::IntBST() : root(0) {}
+template <class T>
+BST<T>::BST<T>() : root(0) {}
 
 // destructor deletes all nodes
-IntBST::~IntBST(){
+template <class T>
+BST<T>::~BST<T>(){
     clear(root);
 }
 
 // recursive helper for destructor
-void IntBST::clear(IntBST::Node *n){
+template <class T>
+void BST<T>::clear(BST<T>::Node *n){
     if (n){
         clear(n->left);
         clear(n->right);
@@ -27,7 +29,8 @@ void IntBST::clear(IntBST::Node *n){
 }
 
 // insert value in tree; return false if duplicate
-bool IntBST::insert(int value){
+template <class T>
+bool BST<T>::insert(T value){
     // handle special case of empty tree first
     if (!root){
         root = new Node(value);
@@ -38,7 +41,8 @@ bool IntBST::insert(int value){
 }
 
 // recursive helper for insert (assumes n is never 0)
-bool IntBST::insert(int value, Node *n){
+template <class T>
+bool BST<T>::insert(T value, Node *n){
     if (value == n->info)
         return false;
     if (value < n->info){
@@ -65,14 +69,16 @@ bool IntBST::insert(int value, Node *n){
     }
 }
 
-// print tree data pre-order
-void IntBST::printPreOrder() const
+// prT tree data pre-order
+template <class T>
+void BST<T>::printPreOrder() const
 {
     printPreOrder(root);
 }
 
 // recursive helper for printPreOrder()
-void IntBST::printPreOrder(Node *n) const
+template <class T>
+void BST<T>::printPreOrder(Node *n) const
 {
     if (n){
         cout << n->info << " ";
@@ -81,11 +87,13 @@ void IntBST::printPreOrder(Node *n) const
     }
 }
 
-// print tree data in-order, with helper
-void IntBST::printInOrder() const{
+// prT tree data in-order, with helper
+template <class T>
+void BST<T>::printInOrder() const{
     printInOrder(root);
 }
-void IntBST::printInOrder(Node *n) const{
+template <class T>
+void BST<T>::printInOrder(Node *n) const{
     // IMPLEMENT HERE
     if (n) {
         printInOrder(n->left);
@@ -95,11 +103,12 @@ void IntBST::printInOrder(Node *n) const{
 }
 
 // prints tree data post-order, with helper
-void IntBST::printPostOrder() const{
+template <class T>
+void BST<T>::printPostOrder() const{
     printPostOrder(root);
 }
-
-void IntBST::printPostOrder(Node *n) const{
+template <class T>
+void BST<T>::printPostOrder(Node *n) const{
     // IMPLEMENT HERE
     if (n) {
         printPostOrder(n->left);
@@ -109,12 +118,14 @@ void IntBST::printPostOrder(Node *n) const{
 }
 
 // return sum of values in tree
-int IntBST::sum() const{
+template <class T>
+T BST<T>::sum() const{
     return sum(root);
 }
 
 // recursive helper for sum
-int IntBST::sum(Node *n) const{
+template <class T>
+T BST<T>::sum(Node *n) const{
     if (n) {
         return n->info + sum(n->left) + sum(n->right);
     }
@@ -122,12 +133,14 @@ int IntBST::sum(Node *n) const{
 }
 
 // return count of values
-int IntBST::count() const{
+template <class T>
+int BST<T>::count() const{
     return count(root);
 }
 
 // recursive helper for count
-int IntBST::count(Node *n) const{
+template <class T>
+int BST<T>::count(Node *n) const{
     if (n) {
         return 1 + count(n->left) + count(n->right);
     }
@@ -136,11 +149,12 @@ int IntBST::count(Node *n) const{
 
 // IMPLEMENT THIS FIRST: returns the node for a given value or NULL if none exists
 // Parameters:
-// int value: the value to be found
+// T value: the value to be found
 // Node* n: the node to start with (for a recursive call)
 // Whenever you call this method from somewhere else, pass it
 // the root node as "n"
-IntBST::Node *IntBST::getNodeFor(int value, Node *n) const{
+template <class T>
+BST<T>::Node *BST<T>::getNodeFor(T value, Node *n) const{
     if (n) {
         if (n->info == value) {
             return n;
@@ -154,14 +168,16 @@ IntBST::Node *IntBST::getNodeFor(int value, Node *n) const{
 }
 
 // returns true if value is in the tree; false if not
-bool IntBST::contains(int value) const{
+template <class T>
+bool BST<T>::contains(T value) const{
     if (getNodeFor(value, root))
         return true; 
     return false;
 }
 
 // returns the Node containing the predecessor of the given value
-IntBST::Node *IntBST::getPredecessorNode(int value) const { 
+template <class T>
+BST<T>::Node *BST<T>::getPredecessorNode(T value) const { 
     Node *tmp = getNodeFor(value, root);
     Node *n = root;
     if (tmp->left) {
@@ -185,14 +201,16 @@ IntBST::Node *IntBST::getPredecessorNode(int value) const {
 }
 
 // returns the predecessor value of the given value or 0 if there is none
-int IntBST::getPredecessor(int value) const{
+template <class T>
+T BST<T>::getPredecessor(T value) const{
     if (!getPredecessorNode(value)) 
         return 0;
     return getPredecessorNode(value)->info;
 }
 
 // returns the Node containing the successor of the given value
-IntBST::Node *IntBST::getSuccessorNode(int value) const {
+template <class T>
+BST<T>::Node *BST<T>::getSuccessorNode(T value) const {
     Node *tmp = getNodeFor(value, root);
     Node *n = root;
     if (tmp->right) {
@@ -216,7 +234,8 @@ IntBST::Node *IntBST::getSuccessorNode(int value) const {
 }
 
 // returns the successor value of the given value or 0 if there is none
-int IntBST::getSuccessor(int value) const {
+template <class T>
+T BST<T>::getSuccessor(T value) const {
     if (!getSuccessorNode(value)) 
         return 0;
     return getSuccessorNode(value)->info; // REPLACE THIS NON-SOLUTION
@@ -224,7 +243,8 @@ int IntBST::getSuccessor(int value) const {
 
 // deletes the Node containing the given value from the tree
 // returns true if the node exist and was deleted or false if the node does not exist
-bool IntBST::remove(int value) {
+template <class T>
+bool BST<T>::remove(T value) {
     // check if this node exists
     if (!contains(value)) return false;
 
@@ -245,7 +265,7 @@ bool IntBST::remove(int value) {
     } 
     // Case 2: Node with two children
     else if (n->left && n->right) {
-        int tmp = getSuccessor(value);
+        T tmp = getSuccessor(value);
         remove(tmp); // recursively check its successor once
                      // since its successor won't have any left subtree
         n->info = tmp;
