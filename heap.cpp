@@ -4,13 +4,41 @@
 // 30 May 2020
 
 #include "heap.h"
+#include <vector>
 #include <iostream>
 using std::cout;
 
 // Pushes a value into the heap, then ensures
 // the heap is correctly arranged
+
+int findPos(std::vector<int>& v1, int length, int value) {
+    int begin = 0; 
+    int end = length;
+    int mid;
+    while (begin < end) {
+        mid = (begin + end) / 2;
+        if (value > v1[mid]) {
+            begin = mid + 1;
+        }
+        else if (value < v1[mid]) {
+            end = mid;
+        }
+        else {
+            return mid;
+        }
+    }
+    return begin;
+}
+
 void Heap::push(int value) {
-    vdata.insert(lower_bound(vdata.begin(), vdata.end(), value), value);
+    if (vdata.empty()) {
+        vdata.push_back(value);
+        return;
+    } else {
+        int len = vdata.size();
+        int pos = findPos(vdata, len, value);
+        vdata.insert(vdata.begin()+pos, value);
+    }
 }
 
 // Pops the minimum value off the heap
