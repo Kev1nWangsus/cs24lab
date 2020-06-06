@@ -12,4 +12,4 @@ heap.o: heap.cpp
 	g++ -c $(CXX_FLAG) heap.cpp
 
 clean:
-	rm -f examheap *.o
+	rm -f examheap*.o

@@ -70,6 +70,7 @@ int main(int argc, char *argv[]) {
     while(!data.empty()){
         assert(!h.empty());
         assert(data.top()==h.top());
+        // cout << data.top() << " " << h.top() << endl;
         data.pop();
         h.pop();
     }
